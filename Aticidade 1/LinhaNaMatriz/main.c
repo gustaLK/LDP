@@ -11,7 +11,7 @@ int main()
     scanf(" %c", &Oper);
     for(int l=0; l<2; l++){
         for(int c=0; c<2; c++){
-            scanf("%f", Matr[l,c]);
+            scanf("%f", &Matr[l][c]);
         }
     }
     if(Oper=='S'){
