@@ -4,5 +4,5 @@ float Media(float Matriz[12][12], int Linha)
     for(int i=0; i<12; i++){
         Result += Matriz[Linha][i];
     }
-    return(Result/12);
+    return(Result / 12);
 }
