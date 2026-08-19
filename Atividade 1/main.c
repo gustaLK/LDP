@@ -10,8 +10,10 @@ int main()
 
     scanf("%d", &Linha);
     scanf(" %c", &Oper);
-    for(int l=0; l<12; l++){
-        for(int c=0; c<12; c++){
+    for(int l=0; l<12; l++)
+    {
+        for(int c=0; c<12; c++)
+        {
             scanf("%f", &Matr[l][c]);
         }
     }
