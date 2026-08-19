@@ -21,7 +21,7 @@ int main()
     else if(Oper=='M'){
         Result= Media(Matr, Linha);
     }
-    printf("%.1f", Result);
+    printf("%.1f\n", Result);
 
     return 0;
 }
