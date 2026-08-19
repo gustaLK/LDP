@@ -9,17 +9,17 @@ int main()
 
     scanf("%i", &Linha);
     scanf(" %c", &Oper);
-    for(int l=0; l<2; l++){
-        for(int c=0; c<2; c++){
+    for(int l=0; l<12; l++){
+        for(int c=0; c<12; c++){
             scanf("%f", &Matr[l][c]);
         }
     }
     if(Oper=='S'){
         Result= Soma(Matr, Linha);
     }
-    //else if(Oper=='M'){
-      //  Result=
-    //}
+    else if(Oper=='M'){
+        Result= Media(Matr, Linha);
+    }
     printf("%.1f", Result);
 
     return 0;
