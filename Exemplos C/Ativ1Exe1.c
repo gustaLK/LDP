@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 void SubString(char origem[], char destino[], int posini, int posfinal)
 {
