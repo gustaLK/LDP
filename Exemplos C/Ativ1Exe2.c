@@ -3,7 +3,7 @@
 
 void SubString(char origem[], char destino[])
 {
-    int i;
+    int i=0;
 
     while(origem[i] != ' '){
         destino[i]=origem[i];
@@ -33,7 +33,7 @@ int main(){
     scanf("%[^\n]", Nome);
 
     SubString1(Nome, UltimoNome);
-    printf("%s,", UltimoNome);
+    printf("%s, ", UltimoNome);
 
     SubString(Nome, PrimeiroNome);
     printf("%s\n", PrimeiroNome);
