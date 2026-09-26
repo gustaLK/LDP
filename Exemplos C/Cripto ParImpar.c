@@ -28,10 +28,12 @@ int main(){
 
     printf("Digite uma palavra: ");
     scanf("%[^\n]", mensagem);
+    while(stricmp(mensagem, "FIM")!=0){
+        cripto(mensagem, msgCripto);
+        printf("%s\n", msgCripto);
 
-    cripto(mensagem, msgCripto);
-
-    printf("%s", msgCripto);
-
+        printf("Digite uma palavra: ");
+        scanf(" %[^\n]", mensagem);
+    }
     return 0;
 }
