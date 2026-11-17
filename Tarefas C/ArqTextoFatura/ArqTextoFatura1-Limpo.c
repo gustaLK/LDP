@@ -49,10 +49,69 @@ void insercao (int tam, Fatura *vetor)
    }
 }
 
-void exibe (Fatura *vet){
-    for(int i=0; i<9; i++){
-        printf("%s\t %i\t %i\t %i\t %", vet[i].nomeProduto);
+void insercaoN (int tam, Fatura *vetor)
+{
+    int i,j, y;
+	Fatura aux;
+    j=1;
+    while (j<=tam-1)
+	{
+		 aux = vetor[j];
+
+		 i = j - 1;
+         while (  i >= 0 &&  vetor[i].numFatura > aux.numFatura )
+         {
+		   vetor[i+1] = vetor[i];
+	       i = i - 1;
+		 }
+        vetor[i+1] = aux;
+        j = j + 1;
+
    }
+}
+
+void exibe (Fatura *vet){
+    for(int i=0; i<=9; i++){
+        printf("%d\t %d\t %-15s %i\t R$%.2f\t R$%.2f\t %i\n", vet[i].numFatura, vet[i].codProduto, vet[i].nomeProduto,
+               vet[i].qtde, vet[i].vrunit, vet[i].vrfrete, vet[i].codforn);
+   }
+   return;
+}
+
+Fatura buscaB(Fatura *vet, int num){
+    int ini=0, fim=9, meio;
+
+    while (ini<=fim){
+        meio= (ini+fim)/2;
+        if (vet[meio].numFatura==num)
+            return (vet[meio]);
+        else if(vet[meio].numFatura<num)
+            ini=meio+1;
+        else
+            fim=meio-1;
+    }
+    return vet[meio];
+}
+
+void buscaA (Fatura *vet){
+    int num=2;
+    Fatura ordNum[11];
+    for(int i=0; i<=9; i++){
+        ordNum[i]=vet[i];
+    }
+    insercaoN(10, ordNum);
+
+
+    while (num!=0){
+        printf("\nDigite o num da Fatura a ser procurada: ");
+        scanf("%i", &num);
+        ordNum[11]= buscaB(ordNum, num);
+        if(ordNum[11].numFatura!=num)
+            printf("Fatura nao encontrada!\n");
+        else
+        printf("%d\t %d\t %-15s %i\t R$%.2f\t R$%.2f\t %i\n", ordNum[11].numFatura, ordNum[11].codProduto, ordNum[11].nomeProduto,
+                   ordNum[11].qtde, ordNum[11].vrunit, ordNum[11].vrfrete, ordNum[11].codforn);
+    }
 }
 
 int LeArquivo(Fatura *vetor)
@@ -74,7 +133,7 @@ int LeArquivo(Fatura *vetor)
   while (!feof(arq))
   {
 	//printf("\n%s",linha);
-	substr(linha,aux,1,5);
+	substr(linha,aux,1,4);
 	vfatura.numFatura = atoi(aux);
 	substr(linha,aux,5,7);
 	vfatura.codProduto = atoi(aux);
@@ -110,7 +169,9 @@ int main()
    int qtde;
    qtde = LeArquivo(vetorFatura);
    insercao(qtde, vetorFatura);
+
    exibe(vetorFatura);
+   buscaA(vetorFatura);
 
 
 
