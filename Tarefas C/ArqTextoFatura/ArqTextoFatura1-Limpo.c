@@ -1,10 +1,10 @@
 // Criar as seguintes funcionalidades
 
-   // 1-Mostrar todas as faturas ordenadas por nome de produto
+   // 1-Mostrar todas as faturas ordenadas por nome de produto -|> *
    // Criar função que ordene por nome (por inserção)
    // Criar função que mostre as faturas (uma fatura por linha)
 
-   // 2- Realizar pesquisa binária por número de fatura. Criar função
+   // 2- Realizar pesquisa binária por número de fatura. Criar função -|> *
    // que peça ao usuário um número de fatura para pesquisa. Caso encontre,
    // mostrar os dados encontrados, senão emitir mensagem de erro.
    // Criar função para pesquisa binária
@@ -105,12 +105,12 @@ void buscaA (Fatura *vet){
     while (num!=0){
         printf("\nDigite o num da Fatura a ser procurada: ");
         scanf("%i", &num);
-        ordNum[11]= buscaB(ordNum, num);
-        if(ordNum[11].numFatura!=num)
+        ordNum[10]= buscaB(ordNum, num);
+        if(ordNum[10].numFatura!=num)
             printf("Fatura nao encontrada!\n");
         else
-        printf("%d\t %d\t %-15s %i\t R$%.2f\t R$%.2f\t %i\n", ordNum[11].numFatura, ordNum[11].codProduto, ordNum[11].nomeProduto,
-                   ordNum[11].qtde, ordNum[11].vrunit, ordNum[11].vrfrete, ordNum[11].codforn);
+        printf("%d\t %d\t %-15s %i\t R$%.2f\t R$%.2f\t %i\n", ordNum[10].numFatura, ordNum[10].codProduto, ordNum[10].nomeProduto,
+                   ordNum[10].qtde, ordNum[10].vrunit, ordNum[10].vrfrete, ordNum[10].codforn);
     }
 }
 
